@@ -1,0 +1,31 @@
+/* ecSilva Homelab: the logo is white on transparent, so it sits on a dark band in both themes */
+:root {
+  color-scheme: light dark;
+  --bg: #fbfbfa; --fg: #1d1d1b; --muted: #6b6b66; --line: #e4e4e0;
+  --accent: #b8325a;          /* the logo's pink, darkened to read on light */
+  --brand: #f46d8b; --band: #18181a; --band-fg: #d9d9d6;
+  font: 17px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #111112; --fg: #ececea; --muted: #9a9a94; --line: #2a2a2c; --accent: #f4789a; }
+}
+body { margin: 0; background: var(--bg); color: var(--fg); }
+main, footer, .band-inner { max-width: 42rem; margin: 0 auto; padding: 0 1.25rem; }
+.band { background: var(--band); color: var(--band-fg); border-bottom: 3px solid var(--brand); }
+.band-inner { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; padding-block: .9rem; }
+.band .home { margin-right: auto; line-height: 0; }
+.band .home img { height: 3rem; width: auto; }
+.band nav a { color: var(--band-fg); margin-left: 1.1rem; text-decoration: none; }
+.band nav a:hover, .band nav a[aria-current] { color: var(--brand); }
+.hero { text-align: center; padding: 2.5rem 1.25rem 1rem; }
+.hero img { width: min(22rem, 80%); height: auto; }
+h1 { font-size: 1.9rem; line-height: 1.2; margin: 2.5rem 0 .5rem; letter-spacing: -.01em; }
+h2 { font-size: 1.15rem; margin: 2.2rem 0 .4rem; }
+p, li { max-width: 65ch; }
+a { color: var(--accent); text-underline-offset: .15em; }
+.muted { color: var(--muted); }
+.apps { list-style: none; padding: 0; }
+.apps li { border-top: 1px solid var(--line); padding: .9rem 0; }
+.apps strong { display: block; }
+code { font-size: .9em; }
+footer { color: var(--muted); font-size: .9rem; padding-top: 3rem; padding-bottom: 2.5rem; }
